@@ -47,3 +47,8 @@ O fluxo de detecção e notificação foi desenhado utilizando recursos contidos
     "eventName": ["StopLogging", "DeleteTrail", "UpdateTrail"]
   }
 }
+```
+## Teste
+* Agora é preciso ir no Cloudtrail > trilhas > stop logging
+* E pronto, recebemos um aviso via e-mail:
+<img width="1080" height="72" alt="image" src="https://github.com/user-attachments/assets/7647279a-c248-499d-8ff0-8ebeb70a4ec1" />
