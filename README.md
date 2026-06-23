@@ -48,6 +48,18 @@ O fluxo de detecção e notificação foi desenhado utilizando recursos contidos
   }
 }
 ```
+
+AWS:
+As 4 Features da AWS mais utilizadas no dia a dia do SOC.
+
+1. AWS Security Hub (Sua "Tela Principal" / SIEM)O Security Hub será a sua primeira tela ao entrar no turno. Como ele centraliza e padroniza todos os alertas no formato ASFF (AWS Security Finding Format), você não precisa abrir serviço por serviço para caçar incidentes.  Feature diária: Insights e Custom Actions. Você utilizará os painéis de Insights para identificar quais recursos têm o maior volume de falhas de segurança e usará as Custom Actions para enviar alertas críticos diretamente para o sistema de tickets do SOC (como Jira ou ServiceNow) ou disparar remediações pelo EventBridge.  
+
+2. Amazon GuardDuty (Seu Detector de Ameaças em Tempo Real)É o motor que vai ditar suas prioridades de incidentes gerando findings comportamentais com severidades de 0.1 a 8.0+.  Feature diária: Análise de Findings por Severidade. Você passará o dia triando alertas como CryptoCurrency:EC2/BitcoinTool (indicação de mineração), UnauthorizedAccess:EC2/SSHBruteForce (ataques externos) ou Stealth:IAMUser/CloudTrailLoggingDisabled (tentativa de evasão de defesa).
+
+3. CloudWatch Logs Insights (Sua Ferramenta de Busca / Threat Hunting)Quando um alerta genérico disparar, você precisará investigar os logs brutos. O Logs Insights possui uma linguagem de busca rápida em massa que você usará constantemente.  Feature diária: Rodar queries para correlacionar eventos. Exemplo: pesquisar nos VPC Flow Logs quais IPs externos receberam o maior volume de tráfego de saída (REJECT vs ACCEPT) de uma instância alvo, ou auditar requisições de DNS suspeitas nos logs do Route 53.
+ 
+4. Amazon Detective (Sua Ferramenta de Análise Forense)Sempre que um alerta do GuardDuty indicar um comprometimento real, o Detective será usado para o processo de Deep Dive (investigação profunda).  Feature diária: Gráficos de Correlação de Entidades e TTP Mapping. O Detective usa teoria de grafos para te mostrar visualmente, em uma linha do tempo de até 1 ano, quais chamadas de API aquele usuário suspeito fez, quais instâncias ele tocou e de onde veio o ataque.  
+
 ## Teste
 * Agora é preciso ir no Cloudtrail > trilhas > stop logging
 * E pronto, recebemos um aviso via e-mail:
