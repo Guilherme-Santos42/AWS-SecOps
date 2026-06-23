@@ -48,6 +48,10 @@ O fluxo de detecção e notificação foi desenhado utilizando recursos contidos
   }
 }
 ```
+## Teste
+* Agora é preciso ir no Cloudtrail > trilhas > stop logging
+* E pronto, recebemos um aviso via e-mail:
+<img width="1080" height="72" alt="image" src="https://github.com/user-attachments/assets/7647279a-c248-499d-8ff0-8ebeb70a4ec1" />
 
 AWS:
 As 4 Features da AWS mais utilizadas no dia a dia do SOC.
@@ -59,8 +63,3 @@ As 4 Features da AWS mais utilizadas no dia a dia do SOC.
 3. CloudWatch Logs Insights (Sua Ferramenta de Busca / Threat Hunting)Quando um alerta genérico disparar, você precisará investigar os logs brutos. O Logs Insights possui uma linguagem de busca rápida em massa que você usará constantemente.  Feature diária: Rodar queries para correlacionar eventos. Exemplo: pesquisar nos VPC Flow Logs quais IPs externos receberam o maior volume de tráfego de saída (REJECT vs ACCEPT) de uma instância alvo, ou auditar requisições de DNS suspeitas nos logs do Route 53.
  
 4. Amazon Detective (Sua Ferramenta de Análise Forense)Sempre que um alerta do GuardDuty indicar um comprometimento real, o Detective será usado para o processo de Deep Dive (investigação profunda).  Feature diária: Gráficos de Correlação de Entidades e TTP Mapping. O Detective usa teoria de grafos para te mostrar visualmente, em uma linha do tempo de até 1 ano, quais chamadas de API aquele usuário suspeito fez, quais instâncias ele tocou e de onde veio o ataque.  
-
-## Teste
-* Agora é preciso ir no Cloudtrail > trilhas > stop logging
-* E pronto, recebemos um aviso via e-mail:
-<img width="1080" height="72" alt="image" src="https://github.com/user-attachments/assets/7647279a-c248-499d-8ff0-8ebeb70a4ec1" />
